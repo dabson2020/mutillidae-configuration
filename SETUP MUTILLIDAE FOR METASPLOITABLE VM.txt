@@ -1,0 +1,56 @@
+HOW TO SET UP MUTILLIDAE IN METASPLOITABLE VM
+
+Login to Metasploitable VM
+change directory into /var/www/mutillidae/ by typing
+	cd /var/www/mutillidae/
+After the directory has changed, open the config.inc file by typing
+	sudo nano config.inc
+enter your password
+
+The database file will be opened
+
+change the dbname from 'metasploit' to 'owasp10'
+
+save by pressing CTRL + X and Yes
+
+You will be taken back to the command prompt
+
+We need to ensure that we can configure the owasp database through the web browser and so 
+we need  to edit open the php.ini file and edit the 'allow_url_include to 'ON'. To do this:
+
+Leave the /var/www/mutillidae/ by typing cd
+
+Change directory into this directory '/etc/php5/cgi
+
+and open the file php.ini by typing
+
+sudo nano php.ini
+
+Press ctrl+W to search and open 'fopen'
+
+scroll down to 'allow_url_include and change it from off to on.
+
+Save the changes by pressing ctrl+X and Yes and then enter.
+
+Next is to restart the apache server
+sudo /etc/init.d/apache2 reload
+Hit Enter
+Once it successfullty restart, type ifconfig to see the ip address
+Type the ip address in your web browser, select mutillidae and login with the default
+username and password.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;
